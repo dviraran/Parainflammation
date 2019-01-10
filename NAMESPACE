@@ -1,0 +1,5 @@
+importFrom("GSVA", "gsva")
+importFrom("GSEABase", "geneIds")
+importFrom("GSEABase", "GeneSet")
+importFrom("GSEABase", "GeneSetCollection")
+exportPattern("^[[:alpha:]]+")
