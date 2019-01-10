@@ -3,15 +3,16 @@
 \docType{data}
 \name{fit_params}
 \alias{fit_params}
-\title{Parainflammation datasets}
+\title{CD45 curves learned from GTEx}
 \format{list:
 \describe{
-  \item{fit_params}{CD45 curves learned from GTEx}
+  \item{coeff}{a matrix with CD45 curves learned from GTEx}
+  \item{tissues}{tissue names}
 }}
 \usage{
 fit_params
 }
 \description{
-Parainflammation datasets
+CD45 curves learned from GTEx
 }
 \keyword{datasets}

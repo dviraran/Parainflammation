@@ -4,14 +4,14 @@
 \alias{calculatePIscore}
 \title{Calculating the PI score}
 \usage{
-calculatePIscore(expr, fit_params, tissue)
+calculatePIscore(expr, tissue)
 }
 \arguments{
 \item{expr}{the gene expression data set. A matrix with row names as symbols and columns as samples.}
 
-\item{fit_params}{the cruves of association with CD45 learned from GTEx.}
-
 \item{tissue}{the tissue source of the expression profile. Must be from the list of tissues in fit_params$tissues}
+
+\item{fit_params}{the cruves of association with CD45 learned from GTEx.}
 }
 \value{
 the PI scores

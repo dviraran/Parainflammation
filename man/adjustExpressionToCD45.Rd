@@ -4,12 +4,12 @@
 \alias{adjustExpressionToCD45}
 \title{Adjusting expression to CD45}
 \usage{
-adjustExpressionToCD45(expr, params)
+adjustExpressionToCD45(expr, fit_params)
 }
 \arguments{
 \item{expr}{the gene expression data set. A matrix with row names as symbols and columns as samples.}
 
-\item{params}{a vector of the curves of association between genes and CD45 learned from GTEx.}
+\item{fit_params}{a vector of the curves of association between genes and CD45 learned from GTEx.}
 }
 \value{
 the adjusted expression profile

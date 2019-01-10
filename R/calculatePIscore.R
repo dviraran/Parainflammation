@@ -34,7 +34,7 @@ calculatePIscore = function(expr,tissue) {
   params = fit_params$coef[,(id*2)]
   expr.adjusted = adjustExpressionToCD45(expr,params)
 
-  egc <- GeneSetCollection(sig)
+  egc <- GeneSetCollection(PI_signature)
   pi = gsva(expr.adjusted,egc,method='ssgsea')
 }
 
@@ -43,12 +43,12 @@ calculatePIscore = function(expr,tissue) {
 #' \code{adjustExpressionToCD45} Returns the adjusted expression profile.
 #'
 #' @param expr the gene expression data set. A matrix with row names as symbols and columns as samples.
-#' @param params a vector of the curves of association between genes and CD45 learned from GTEx.
+#' @param fit_params a vector of the curves of association between genes and CD45 learned from GTEx.
 #'
 #' @return the adjusted expression profile
-adjustExpressionToCD45 = function(expr,params) {
-  A = intersect(rownames(expr),names(params))
-  p = as.matrix(params[A])
+adjustExpressionToCD45 = function(expr,fit_params) {
+  A = intersect(rownames(expr),names(fit_params))
+  p = as.matrix(fit_params[A])
   ex = as.matrix(expr[A,])
   cd45 = as.matrix(ex['PTPRC',])
   expr.adjusted = ex-p%*%t(cd45)
